@@ -21,7 +21,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 // puis lui donner le droit d'execution 
 sudo chmod +x docker.sh
 
-./install_docker.sh
+./docker.sh
 
 sudo chmod 666 /var/run/docker.sock
 sudo docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
