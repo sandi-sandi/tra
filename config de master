@@ -1,0 +1,21 @@
+1. Initialize Kubernetes Master Node [On MasterNode]
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+//ici nous allons avoir une erreur(preflight) pour resoudre cette erreur , utiliser la commande suivante 
+kubeadm init --ignore-preflight-errors=all
+
+// a ce niveau, nous allons copier le token genere par le master et executer dans le worker.
+
+2. Configure Kubernetes Cluster [On MasterNode]
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+3. Deploy Networking Solution (Calico) [On MasterNode]
+kubectl apply -f https://docs.projectcalico.org/v3.20/manifests/calico.yaml
+
+
+4. Deploy Ingress Controller (NGINX) [On MasterNode]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-
+nginx/controller-v0.49.0/deploy/static/provider/baremetal/deploy.yaml
