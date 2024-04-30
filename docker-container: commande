@@ -1,0 +1,9 @@
+
+
+////////pour installer docker dans une machine virtulle, il n'ya pas de soucis mais pour installe docker dans un conteneur, il faut d'abord saisir des commandes suivante dans la machine host. 
+///////se rassurer de maitre le nom correct du container a configurer. 
+
+sudo lxc config set lxccontainername security.nesting=true
+sudo lxc config set lxccontainername  security.privileged=true
+sudo lxc config set sonarQube linux.kernel_modules =bridge,br_netfilter,x_tables,ip_tables,ip_vs,ip_set,ipip,xt_mark,xt_multiport,ip_tunnel,tunnel4,netlink_diag,nf_conntrack,nfnetlink,overlay
+sudo lxc config set  sonarQube  linux.kernel_modules=br_netfilter
