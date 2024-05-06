@@ -1,0 +1,21 @@
+1. Docker Swarm : Docker Swarm est principalement utilisé pour orchestrer des conteneurs Docker au sein d'un cluster de nœuds Docker. 
+  Il permet de déployer, gérer et mettre à l'échelle des applications conteneurisées de manière simple et efficace. Docker Swarm convient
+  particulièrement aux déploiements plus simples et aux petites équipes qui cherchent une solution d'orchestration facile à mettre en place.
+
+2. Kubernetes : Kubernetes a une portée beaucoup plus large que Docker Swarm. Il est conçu pour orchestrer des applications conteneurisées
+à grande échelle dans des environnements complexes. Kubernetes offre une gestion avancée des ressources, une haute disponibilité, une scalabilité automatique, 
+une extensibilité et des fonctionnalités avancées telles que la gestion des mises à jour, la gestion des secrets, le déploiement continu, etc. Kubernetes est largement 
+utilisé dans les environnements de production pour déployer et gérer des applications conteneurisées de manière fiable et efficace.
+
+3. OpenShift : OpenShift étend les fonctionnalités de Kubernetes en ajoutant des outils supplémentaires pour simplifier le déploiement et la gestion d'applications conteneurisées 
+  dans des environnements d'entreprise. OpenShift offre des fonctionnalités telles que la gestion des utilisateurs, la sécurité avancée, le déploiement continu, la gestion des applications, etc.
+  OpenShift est conçu pour répondre aux besoins spécifiques des entreprises qui cherchent à déployer des applications conteneurisées de manière sécurisée et fiable.
+
+
+  en resume :
+
+la porte  de docker swarm est le conteneur
+
+la porte de kubernetes est le cluster.
+
+OpenShift ayant aussi une porte grande comme kubernetes, ajoute certain fonctionnalite  pour la gestion d'une securite avancee, la gestion des appl... qui le rend extraimement chers. 
