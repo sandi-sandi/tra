@@ -2,6 +2,11 @@ sudo docker run -d --name prometheus -p 9090:9090 prom/prometheus
 sudo docker run -d --name grafana -p 3000:3000 grafana/grafana
 
 
+sudo docker exec -it 2f3e78956bec /bin/sh
+cd /etc/prometheus/
+vi   prometheus.yml
+
+
 *prometheus.yml*
 
 global:
