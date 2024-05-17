@@ -1,0 +1,21 @@
+1 Connectez-vous à votre serveur. Si vous utilisez Ubuntu sur votre ordinateur de bureau, ouvrez un terminal de commande en pressant simultanément les touches Ctrl+Alt+T de votre clavier. 
+
+ 2 Tapez sudo ufw status verbose. N’oubliez pas de presser la touche Entrée de votre clavier. Si UFW est en cours de fonctionnement, vous verrez s’afficher un message suivi d’une liste des règles s’appliquant au pare-feu ainsi qu’une liste des ports existants [1] .
+
+    Si vous voyez un message affichant État : inactif, tapez sudo ufw enable après l’invite de commande, sans oublier de presser la touche Entrée pour lancer l’exécution du pare-feu.
+
+ 3. Ouvrez un port. Vous pourrez le faire en tapant sudo ufw allow [numéro_de_port] après l’invite de commande. Si vous voulez ouvrir le port 22 (SSH), vous devrez saisir sudo ufw allow 22 et presser la touche Entrée de votre clavier. Votre commande sera immédiatement prise en compte sans que vous n’ayez à redémarrer votre ordinateur [2] .
+
+    Il vous suffira de taper le nom du service si le port que vous voulez ouvrir correspond à un de ceux qui sont énumérés dans le fichier /etc/services. Vous devrez donc saisir sudo ufw allow ssh plutôt que sudo ufw allow 22.
+    Pour ouvrir une suite spécifiée de ports, utilisez la syntaxe sudo ufw allow 6000: 6007/tcp, en remplaçant la gamme de ports 6000: 6007 par celle que vous voulez débloquer. Si cette gamme est constituée des ports UDP du système, remplacez tcp par udp dans votre commande.
+    Pour spécifier une adresse IP pouvant accéder à ce port, appliquez la commande sudo ufw allow from 10.0.0.1 to any port 22. Remplacez 10.0.0.1 par l’adresse IP réelle, ainsi que 22 par le numéro du port que vous voulez ouvrir.
+
+4.   Effacez les règles non utiles au fonctionnement du pare-feu. Tous les ports qui ne sont pas explicitement ouverts sont bloqués par défaut. Si vous ouvrez un port et que vous décidez par la suite de le fermer, vous devrez suivre une procédure très simple :
+
+    saisissez sudo ufw status numbered et pressez la touche Entrée de votre clavier ; vous verrez s’afficher une énumération des règles applicables au pare-feu, chacune d’entre elles commençant par un numéro qui la représente dans la liste ;
+    repérez le numéro identifiant la règle que vous voulez supprimer ; en supposant que vous voulez effacer la règle identifiée par celle portant le numéro 2 dont le rôle consiste à ouvrir le port 22 ;
+    vous devrez taper sudo ufw delete 2 puis presser la touche Entrée de votre clavier pour effacer la règle énumérée à la ligne 2 de la liste affichée.
+
+
+
+////avoir la suite au lien   https://fr.wikihow.com/ouvrir-des-ports-d%27acc%C3%A8s-au-pare%E2%80%90feu-d%27un-serveur-Linux
