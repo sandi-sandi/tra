@@ -1,0 +1,23 @@
+
+stage('Autoscaling') {
+            steps {
+                script {
+                    def currentCPU = sh(script: 'command_to_get_CPU_usage', returnStdout: true).trim().toInteger()
+                    
+                    echo "CPU usage is at ${currentCPU}%."
+                    
+                    if (currentCPU <= 1) {
+                        echo "Triggering autoscaling..."
+                        
+                        // Code to automatically create 3 additional instances
+                        sh 'command_to_create_instances'
+                        
+                        echo "Autoscaling successful. Three new instances created."
+                    } else {
+                        echo "CPU usage is above threshold. No autoscaling needed."
+                    }
+                }
+            }
+        }
+    }
+}
